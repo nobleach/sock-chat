@@ -30,7 +30,7 @@ describe('User', function() {
         });
 
         client2.on('new user', function(usersName){
-          usersName.should.equal(chatUser2.name + " has joined.");
+          expect(usersName).to.equal(chatUser2.name + " has joined.");
           client2.disconnect();
         });
       });
