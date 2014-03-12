@@ -11,7 +11,11 @@ var users = [
 io.sockets.on('connection', function (socket) {
   socket.on('connection name',function(user){
     io.sockets.emit('new user', user.name + " has joined.");
-  })
+  });
+
+  socket.on('message', function(msg){
+    io.sockets.emit('message', msg);
+  });
 
 });
 
